@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:scrollbars="none"
+    tools:context=".SignUp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="170dp">
+                <LinearLayout
+                    android:background="#423144"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_marginTop="25dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_chumi_home_no_bg_svg"
+                        android:contentDescription="@string/app_name"/>
+                    <TextView
+                        android:id="@+id/txtSignup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/txtSignUp"
+                        android:textColor="#fff"
+                        android:textSize="30sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_gravity="center">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:ems="10"
+                android:drawablePadding="12dp"
+                android:padding="8dp"
+                android:hint="@string/hintName"
+                android:textColorHint="#f16f7d"
+                android:background="@color/transparent"
+                android:maxLines="1"
+                android:layout_marginTop="30dp"
+                android:drawableLeft="@drawable/ic_person_white_24dp"
+                android:drawableStart="@drawable/ic_person_white_24dp" />
+
+                </android.support.design.widget.TextInputLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f16f7d"/>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:ems="10"
+                android:drawablePadding="12dp"
+                android:padding="8dp"
+                android:hint="@string/hintAddress"
+                android:textColorHint="#f16f7d"
+                android:background="@color/transparent"
+                android:maxLines="1"
+                android:drawableLeft="@drawable/ic_location_city_white_24dp"
+                android:layout_marginTop="30dp"
+                android:drawableStart="@drawable/ic_location_city_white_24dp" />
+
+                </android.support.design.widget.TextInputLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f16f7d"/>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:ems="10"
+                android:drawablePadding="12dp"
+                android:padding="8dp"
+                android:hint="@string/hintEmail"
+                android:textColorHint="#f16f7d"
+                android:background="@color/transparent"
+                android:maxLines="1"
+                android:drawableLeft="@drawable/ic_email_white_24dp"
+                android:layout_marginTop="30dp"
+                android:drawableStart="@drawable/ic_email_white_24dp" />
+
+                </android.support.design.widget.TextInputLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f16f7d"/>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:ems="10"
+                android:drawablePadding="12dp"
+                android:padding="8dp"
+                android:hint="@string/hintPhoneNumber"
+                android:textColorHint="#f16f7d"
+                android:background="@color/transparent"
+                android:maxLines="1"
+                android:drawableLeft="@drawable/ic_phone_white_24dp"
+                android:layout_marginTop="30dp"
+                android:drawableStart="@drawable/ic_phone_white_24dp" />
+
+                </android.support.design.widget.TextInputLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f16f7d"/>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtBirthday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:ems="10"
+                android:drawablePadding="12dp"
+                android:padding="8dp"
+                android:hint="@string/txtBirthday"
+                android:textColorHint="#f16f7d"
+                android:background="@color/transparent"
+                android:maxLines="1"
+                android:drawableLeft="@drawable/ic_date_range_white_24dp"
+                android:layout_marginTop="30dp"
+                android:drawableStart="@drawable/ic_date_range_white_24dp"
+                android:focusable="false"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f16f7d"/>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtWedding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:ems="10"
+                android:drawablePadding="12dp"
+                android:padding="8dp"
+                android:hint="@string/txtWedding"
+                android:textColorHint="#f16f7d"
+                android:background="@color/transparent"
+                android:maxLines="1"
+                android:drawableLeft="@drawable/ic_date_range_white_24dp"
+                android:layout_marginTop="30dp"
+                android:drawableStart="@drawable/ic_date_range_white_24dp"
+                android:focusable="false"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f16f7d"/>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:passwordToggleTint="@color/hintPass"
+                    app:passwordToggleEnabled="true">
+
+            <EditText
+                android:id="@+id/edtPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:drawablePadding="12dp"
+                android:padding="8dp"
+                android:hint="@string/hintPassword"
+                android:textColorHint="#f16f7d"
+                android:background="@color/transparent"
+                android:maxLines="1"
+                android:drawableLeft="@drawable/ic_lock_white_24dp"
+                android:layout_marginTop="30dp"
+                android:drawableStart="@drawable/ic_lock_white_24dp" />
+
+                </android.support.design.widget.TextInputLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f16f7d"/>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtSecureCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:ems="10"
+                android:drawablePadding="12dp"
+                android:padding="8dp"
+                android:hint="@string/txtSecureCode"
+                android:textColorHint="#f16f7d"
+                android:background="@color/transparent"
+                android:maxLines="1"
+                android:drawableLeft="@drawable/ic_security_white_24dp"
+                android:layout_marginTop="30dp"
+                android:drawableStart="@drawable/ic_security_white_24dp" />
+
+                </android.support.design.widget.TextInputLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f16f7d"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSignUp"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/background_signup_btn"
+            android:text="@string/btnSignUp"
+            android:textColor="#fff"
+            android:padding="16dp"
+            android:clickable="true"
+            android:layout_marginTop="24dp"
+            android:focusable="true"
+            style="@style/Base.TextAppearance.AppCompat.Body1"/>
+
+
+        <TextView
+            android:id="@+id/alreadyHaveAcct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtAlreadyhaveacct"
+            android:textStyle="italic"
+            android:textSize="20sp"
+            android:textColor="#f16f7d"
+            android:padding="16dp"
+            android:clickable="true"
+            android:layout_marginBottom="40dp"
+            style="@style/Base.TextAppearance.AppCompat.Body1"
+            android:focusable="true" />
+
+    </LinearLayout>
+
+</ScrollView>

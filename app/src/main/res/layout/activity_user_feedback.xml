@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="18dp"
+    android:paddingRight="18dp"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:scrollbars="none"
+    tools:context=".UserFeedback">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:text="@string/txtGiveUsAFeedback"
+            android:textColor="#f16f7d"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/title1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:ems="10"
+            android:drawablePadding="12dp"
+            android:padding="8dp"
+            android:hint="@string/hintTitle"
+            android:textColorHint="#f16f7d"
+            android:background="@color/transparent"
+            android:maxLines="1"
+            android:drawableLeft="@drawable/ic_title_white_24dp"
+            android:layout_marginTop="30dp"
+            android:drawableStart="@drawable/ic_title_white_24dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#f9d7db"/>
+
+        <EditText
+            android:id="@+id/msg1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:drawablePadding="12dp"
+            android:padding="8dp"
+            android:hint="@string/hintMessage"
+            android:textColorHint="#f16f7d"
+            android:background="@color/transparent"
+            android:maxLines="1"
+            android:drawableLeft="@drawable/ic_subtitles_white_24dp"
+            android:layout_marginTop="30dp"
+            android:drawableStart="@drawable/ic_subtitles_white_24dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#f9d7db"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnSubmitFeedback"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_signup_btn"
+        android:text="@string/btnSubmitFeedback"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_gravity="center_horizontal"
+        android:padding="16dp"
+        android:clickable="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        android:focusable="true"
+        style="@style/Base.TextAppearance.AppCompat.Body1"
+        android:drawableLeft="@drawable/ic_send_white_24dp"
+        android:drawableStart="@drawable/ic_send_white_24dp"/>
+
+        <Button
+            android:id="@+id/buttonSignIn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_signup"
+            android:text="@string/btnGoBack"
+            android:onClick="goBackHome"
+            android:layout_gravity="center_horizontal"
+            android:textSize="20sp"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:padding="16dp"
+            android:clickable="true"
+            android:layout_marginTop="4dp"
+            android:focusable="true"
+            style="@style/Base.TextAppearance.AppCompat.Body1"
+            android:drawableLeft="@drawable/ic_rotate_left_white_24dp"
+            android:drawableStart="@drawable/ic_rotate_left_white_24dp" />
+
+    </LinearLayout>
+
+</ScrollView>

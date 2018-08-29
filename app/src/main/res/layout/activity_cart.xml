@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    tools:context=".Cart">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="170dp">
+        <LinearLayout
+            android:background="#423144"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_marginTop="25dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_chumi_home_no_bg_svg"
+                android:contentDescription="userimg"/>
+            <TextView
+                android:id="@+id/usernametxt"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:textSize="24sp"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:drawablePadding="12dp"
+                android:drawableLeft="@drawable/ic_info_outline_black_24dp"
+                android:drawableStart="@drawable/ic_info_outline_black_24dp"
+                android:text="Please confirm order details"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+
+
+            <TextView
+                android:id="@+id/datetxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:paddingLeft="20dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:layout_gravity="center_vertical"
+                android:drawablePadding="12dp"
+                android:drawableLeft="@drawable/ic_date_range_black_24dp"
+                android:drawableStart="@drawable/ic_date_range_black_24dp"
+                android:text="dd/mm/yyyy"/>
+
+
+            <TextView
+                android:id="@+id/timetxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:layout_gravity="center_vertical"
+                android:drawablePadding="12dp"
+                android:drawableLeft="@drawable/ic_access_time_black_24dp"
+                android:drawableStart="@drawable/ic_access_time_black_24dp"
+                android:layout_marginBottom="10dp"
+                android:text="12:00 pm"/>
+
+
+            <TextView
+                android:id="@+id/sizetxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:layout_gravity="center_vertical"
+                android:drawablePadding="12dp"
+                android:drawableLeft="@drawable/ic_local_gas_station_black_24dp"
+                android:drawableStart="@drawable/ic_local_gas_station_black_24dp"
+                android:layout_marginBottom="10dp"
+                android:text="6 kg"/>
+
+            <TextView
+                android:id="@+id/pricetxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:layout_gravity="center_vertical"
+                android:drawablePadding="12dp"
+                android:drawableLeft="@drawable/ic_attach_money_black_24dp"
+                android:drawableStart="@drawable/ic_attach_money_black_24dp"
+                android:layout_marginBottom="10dp"
+                android:text="6,000"/>
+
+            <TextView
+                android:id="@+id/deliverytxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:layout_gravity="center_vertical"
+                android:drawablePadding="12dp"
+                android:drawableLeft="@drawable/ic_airport_shuttle_black_24dp"
+                android:drawableStart="@drawable/ic_airport_shuttle_black_24dp"
+                android:layout_marginBottom="10dp"
+                android:text="Delivery method"/>
+
+            <TextView
+                android:id="@+id/extracommentstxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:layout_gravity="center_vertical"
+                android:drawablePadding="12dp"
+                android:drawableLeft="@drawable/ic_message_black_24dp"
+                android:drawableStart="@drawable/ic_message_black_24dp"
+                android:layout_marginBottom="20dp"
+                android:text="Extra comments..."/>
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/buttonstylegradient"
+            android:onClick="submit"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:text="Check Out"
+            android:textSize="20sp"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:drawableLeft="@drawable/ic_shopping_cart_black_24dp"/>
+
+        <Button
+            android:id="@+id/buttonSignIn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_signup"
+            android:text="Go back"
+            android:onClick="goBackToHome"
+            android:layout_gravity="center_horizontal"
+            android:textSize="20sp"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:padding="16dp"
+            android:clickable="true"
+            android:layout_marginTop="4dp"
+            android:focusable="true"
+            style="@style/Base.TextAppearance.AppCompat.Body1"
+            android:drawableLeft="@drawable/ic_rotate_left_white_24dp"
+            android:drawableStart="@drawable/ic_rotate_left_white_24dp" />
+
+    </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</ScrollView>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:scrollbars="none"
+    tools:context=".UserProfile">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="170dp">
+        <LinearLayout
+            android:background="#423144"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_marginTop="25dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_chumi_home_no_bg_svg"
+                android:contentDescription="userimg"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:text="Profile"
+                android:textColor="#fff"
+                android:textSize="30sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:drawablePadding="12dp"
+                android:padding="8dp"
+                android:hint="Name"
+                android:textColorHint="#f16f7d"
+                android:background="@color/transparent"
+                android:maxLines="1"
+                android:layout_marginTop="30dp"
+                android:drawableLeft="@drawable/ic_person_white_24dp"
+                android:drawableStart="@drawable/ic_person_white_24dp" />
+
+
+            <TextView
+                android:id="@+id/txtAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:drawablePadding="12dp"
+                android:padding="8dp"
+                android:hint="@string/hintAddress"
+                android:textColorHint="#f16f7d"
+                android:background="@color/transparent"
+                android:maxLines="1"
+                android:drawableLeft="@drawable/ic_location_city_white_24dp"
+                android:layout_marginTop="30dp"
+                android:drawableStart="@drawable/ic_location_city_white_24dp" />
+
+
+            <TextView
+                android:id="@+id/txtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:drawablePadding="12dp"
+                android:padding="8dp"
+                android:hint="@string/hintEmail"
+                android:textColorHint="#f16f7d"
+                android:background="@color/transparent"
+                android:maxLines="1"
+                android:drawableLeft="@drawable/ic_email_white_24dp"
+                android:layout_marginTop="30dp"
+                android:drawableStart="@drawable/ic_email_white_24dp" />
+
+
+            <TextView
+                android:id="@+id/txtPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:drawablePadding="12dp"
+                android:padding="8dp"
+                android:hint="@string/hintPhoneNumber"
+                android:textColorHint="#f16f7d"
+                android:background="@color/transparent"
+                android:maxLines="1"
+                android:drawableLeft="@drawable/ic_phone_white_24dp"
+                android:layout_marginTop="30dp"
+                android:drawableStart="@drawable/ic_phone_white_24dp" />
+
+            <TextView
+                android:id="@+id/txtBirthday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:drawablePadding="12dp"
+                android:padding="8dp"
+                android:hint="Birthday"
+                android:textColorHint="#f16f7d"
+                android:background="@color/transparent"
+                android:maxLines="1"
+                android:drawableLeft="@drawable/ic_date_range_white_24dp"
+                android:layout_marginTop="30dp"
+                android:drawableStart="@drawable/ic_date_range_white_24dp" />
+
+            <TextView
+                android:id="@+id/txtWedding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:drawablePadding="12dp"
+                android:padding="8dp"
+                android:hint="Wedding Anniversary"
+                android:textColorHint="#f16f7d"
+                android:background="@color/transparent"
+                android:maxLines="1"
+                android:drawableLeft="@drawable/ic_date_range_white_24dp"
+                android:layout_marginTop="30dp"
+                android:drawableStart="@drawable/ic_date_range_white_24dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
