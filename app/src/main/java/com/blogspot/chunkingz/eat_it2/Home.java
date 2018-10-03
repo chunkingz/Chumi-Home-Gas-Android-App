@@ -29,6 +29,12 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.blogspot.chunkingz.eat_it2.Common.Common;
+import com.blogspot.chunkingz.eat_it2.Model.GasPrice;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
 import java.util.Calendar;
@@ -41,20 +47,26 @@ public class Home extends AppCompatActivity
     private EditText date;
     private EditText time;
     private EditText cylinderSize2;
+    private TextView priceTextView;
     Button submit;
     private TextView price;
     private TextView textArea;
     private String format;
     private RadioGroup radioGroup;
     private RadioButton radioButton;
-    private final Integer homePriceOfGas = 400;
-    private final Integer officePriceOfGas = 380;
+    private final Integer homePriceOfGas = 384;
+    private final Integer officePriceOfGas = 352;
     private String cartDate;
     private String cartTime;
     private String cartSize;
     private String cartPrice;
     private String cartDelivery;
     private String cartComment;
+
+    String homePriceFirebase, officePriceFirebase;
+
+    private FirebaseDatabase database;
+    private DatabaseReference table_gas_price;  // for the gas cylinder price
 
     private void selectedDeliveryMethod() {
 
@@ -123,11 +135,11 @@ public class Home extends AppCompatActivity
         selectedDeliveryMethod();
 
         switch (radioButton.getText().toString()) {
-            case "Home Service (N400/kg)":
-                number *= homePriceOfGas;
+            case "Home Service":
+                number *= Integer.parseInt(homePriceFirebase);
                 break;
-            case "Come to our office (N380/kg)":
-                number *= officePriceOfGas;
+            case "Come to our office":
+                number *= Integer.parseInt(officePriceFirebase);
                 break;
             default:
                 return;
@@ -160,18 +172,46 @@ public class Home extends AppCompatActivity
 
         date = findViewById(R.id.homeDatePicker);
         time = findViewById(R.id.homeTimePicker);
-        Button plus = findViewById(R.id.homeSizePlusText);
-        Button minus = findViewById(R.id.homeSizeMinusText);
         radioGroup = findViewById(R.id.radioGroup);
-        RadioButton home = findViewById(R.id.radioButton);
-        RadioButton office = findViewById(R.id.radioButton2);
         cylinderSize2 = findViewById(R.id.kgText2);
         price = findViewById(R.id.kgsum);
         textArea = findViewById(R.id.textArea);
+        priceTextView = findViewById(R.id.priceTextView);
 
-        TextView txtkindlypick = findViewById(R.id.txtkindlypick);
-        TextView txtsizeofcy = findViewById(R.id.txtsizeofcy);
-        TextView txtdelivery = findViewById(R.id.deliveryText);
+        // init Firebase
+        table_gas_price = FirebaseDatabase.getInstance().getReference("Gas_Price");
+
+        // display a loading dialog
+        final ProgressDialog mDialog = new ProgressDialog(Home.this);
+        mDialog.setMessage("Fetching current price, Please wait...");
+        mDialog.show();
+
+        // try to check for gas price values in the db
+        table_gas_price.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.child("Price").exists()){
+                    mDialog.dismiss();
+                    homePriceFirebase = dataSnapshot.child("Price").child("home").getValue().toString();
+                    officePriceFirebase = dataSnapshot.child("Price").child("office").getValue().toString();
+                    if(dataSnapshot.child("Price").child("home").exists() && dataSnapshot.child("Price").child("office").exists()){
+                        priceTextView.setVisibility(View.VISIBLE);
+                        priceTextView.setText("Price:\nHome = N"+homePriceFirebase +"  Office = N"+officePriceFirebase);
+                    } else {
+                        Toast.makeText(Home.this, "home and office price don't exist", Toast.LENGTH_SHORT).show();
+                    }
+
+                }else {
+                    mDialog.dismiss();
+                    Toast.makeText(Home.this, "Price db doesnt exist, contact admin", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(Home.this, "Database error", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         // init paper
         Paper.init(this);
@@ -251,11 +291,11 @@ public class Home extends AppCompatActivity
 
                             Float cySize = intCylinderSize2;
                             switch (radioButton.getText().toString()) {
-                                case "Home Service (N400/kg)":
-                                    intCylinderSize2 *= homePriceOfGas;
+                                case "Home Service":
+                                    intCylinderSize2 *= Integer.parseInt(homePriceFirebase);
                                     break;
-                                case "Come to our office (N380/kg)":
-                                    intCylinderSize2 *= officePriceOfGas;
+                                case "Come to our office":
+                                    intCylinderSize2 *= Integer.parseInt(officePriceFirebase);
                                     break;
                                 default:
                                     return;

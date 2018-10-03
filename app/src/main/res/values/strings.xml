@@ -32,8 +32,8 @@
     <string name="homeTimepicker">Fill in Time </string>
 
     <string name="homeDeliveryText">Delivery</string>
-    <string name="homeDelivery1Text">Home Service (N400/kg)</string>
-    <string name="homeDelivery2Text">Come to our office (N380/kg)</string>
+    <string name="homeDelivery1Text">Home Service</string>
+    <string name="homeDelivery2Text">Come to our office</string>
 
     <string name="homeSizeZeroHint"> 15kg </string>
 

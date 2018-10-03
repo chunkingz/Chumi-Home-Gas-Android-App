@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
     private EditText phonenumber, password;
     private com.rey.material.widget.CheckBox checkboxRememberMe;
 
-    private FirebaseDatabase database;
     private DatabaseReference table_user;
 
     /*Handler handler = new Handler();
@@ -56,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         // 2000ms = 2secs which is the delay for the splash screen
         //handler.postDelayed(runnable, 2000);
 
-        //init Paper
+        //initialize Paper
         Paper.init(this);
 
         // check remember user
@@ -70,8 +69,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // init Firebase
-        database = FirebaseDatabase.getInstance();
-        table_user = database.getReference("User");
+        table_user = FirebaseDatabase.getInstance().getReference("User");
 
         forgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                 } else {
                                     mDialog.dismiss();
-                                    Toast.makeText(MainActivity.this, "User doesnt exist", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(MainActivity.this, "User doesn't exist", Toast.LENGTH_SHORT).show();
                                 }
                             }
 
@@ -160,8 +158,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void login(final String phone, final String pass) {
         // init Firebase
-        database = FirebaseDatabase.getInstance();
-        table_user = database.getReference("User");
+        table_user = FirebaseDatabase.getInstance().getReference("User");
 
         if (Common.isConnectedToInternet(getBaseContext())) {
 

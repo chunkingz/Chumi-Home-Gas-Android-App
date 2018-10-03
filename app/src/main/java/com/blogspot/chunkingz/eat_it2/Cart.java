@@ -32,14 +32,15 @@ public class Cart extends AppCompatActivity {
 
     private DatabaseReference requests;
 
-
-    String URL_REQUEST = "http://firebase.kropmann.com/request.php";
+    // URL that the orders email goto
+    String URL_REQUEST = "http://firebase.chumihome.com/request.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
 
+        // How the Firebase request is made.
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         requests = database.getReference("Requests");
 

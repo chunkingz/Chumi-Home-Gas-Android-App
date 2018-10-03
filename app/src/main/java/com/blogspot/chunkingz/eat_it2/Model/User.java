@@ -10,7 +10,9 @@ public class User {
     private String birthday;
     private String weddingAnniversary;
 
-    public  User() {}
+    public  User() {
+        // Default constructor required for calls to DataSnapshot.getValue(User.class)
+    }
 
     public User(String name, String password, String address, String email, String secureCode, String phoneNumber, String birthday, String weddingAnniversary) {
         this.name = name;
